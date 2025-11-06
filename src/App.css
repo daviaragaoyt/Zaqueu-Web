@@ -1,0 +1,140 @@
+/* App.css */
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #fefaf9;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.loading-active body { 
+  padding-top: 5px; 
+}
+.page-container {
+
+  padding-top: 5px; 
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+}
+
+p,
+li,
+button {
+  font-weight: 400;
+}
+
+.section-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px;
+  gap: 20px;
+  margin-left: 80px;
+}
+
+.text-content {
+  flex: 1;
+}
+
+.section-main h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  background: linear-gradient(to top, #f3b1e8f2, #c32fa3);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.section-main h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  height: 56px;
+  background: linear-gradient(to right, #f3b1e8f2, #f075d5f0);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.section-main p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  line-height: 1.5;
+  color: white;
+}
+
+.container1 {
+  max-width: 80%;
+}
+
+.container2 {
+  display: flex;
+  align-items: center;
+}
+
+.container2 button {
+  padding: 15px 21px;
+  background: linear-gradient(to right, #2c1c35, #5b1754);
+  color: white;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.arrow-icon {
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.image-wrapper img {
+  width: 454px;
+  object-fit: cover;
+  filter: drop-shadow(12px 12px 12px rgba(0, 0, 0, 0.8));
+  margin-right: 55px;
+}
+
+.section2 {
+  display: flex;
+  justify-content: center;
+  margin-top: 70px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .section-main {
+    flex-direction: column;
+    align-items: center;
+    margin-left: 0;
+    padding: 20px;
+  }
+
+  .section-main h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .section-main h3 {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  .section-main p {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+
+  .image-wrapper img {
+    width: 300px;
+    margin-top: 20px;
+  }
+
+  .container2 {
+    flex-direction: column;
+  }
+}
