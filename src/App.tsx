@@ -1,7 +1,7 @@
 
 import Navbar from './components/Navbar';
-import Footer from './components/Footer';
-import AppRoutes from './Routes';
+
+import AppRoutes from './routes';
 import { useMediaQuery } from './hooks/useMediaQuery'; // Vamos precisar do hook aqui
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
         {/* O AppRoutes vai renderizar a página correta */}
         <AppRoutes />
       </main>
-      <Footer isMobile={isMobile} />
+    
     </>
   );
 }

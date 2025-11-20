@@ -13,7 +13,9 @@ body {
 
   padding-top: 5px; 
 }
-
+html {
+  scroll-behavior: smooth;
+}
 h1,
 h2,
 h3,

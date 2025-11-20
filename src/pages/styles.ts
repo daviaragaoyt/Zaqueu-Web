@@ -1,6 +1,6 @@
-import { type CSSProperties } from 'react';
+import type { CSSProperties } from 'react';
 
-// --- ESTILOS DO "HERO" ---
+// --- ESTILOS DO "HERO" (Fundo Azul, Texto Branco) ---
 const heroBase: Record<string, CSSProperties> = {
   heroContainer: {
     display: 'flex',
@@ -13,30 +13,31 @@ const heroBase: Record<string, CSSProperties> = {
   },
   title: {
     fontSize: '4rem',
-    color: 'rgba(26, 39, 91, 1)',
+    color: 'rgba(26, 39, 91, 1)', // Texto Branco
     margin: '0 0 0.5rem 0',
   },
   subtitle: {
-    fontSize: '2rem',
-    color: 'rgba(26, 39, 91, 1)',
+    fontSize: '2.3rem',
+    color: 'rgba(26, 39, 91, 1)', // Texto Branco
     margin: '0 0 1rem 0',
-    fontWeight: 400,
+
   },
   description: {
     fontSize: '1.2rem',
-    color: '#555',
+    color: 'rgba(26, 39, 91, 1)', // Branco com transparência
     marginBottom: '2rem',
   },
   heroButton: {
-    padding: '12px 28px',
+    width: '50%',
+    padding: '12px 0',
     fontSize: '1.1rem',
     fontWeight: 600,
-    color: 'white',
+    color: '#fff',
     background: 'linear-gradient(to right, rgba(26, 39, 91, 1), rgba(46, 71, 189, 1)',
     border: 'none',
     borderRadius: '8px',
     cursor: 'pointer',
-    transition: 'opacity 0.2s ease', 
+    transition: 'background-color 0.2s ease',
   },
   heroImage: {
     flex: 1,
@@ -44,7 +45,6 @@ const heroBase: Record<string, CSSProperties> = {
     justifyContent: 'center',
     alignItems: 'center',
   },
-
   imagePlaceholder: {
     width: '100%',
     maxWidth: '500px',
@@ -54,18 +54,19 @@ const heroBase: Record<string, CSSProperties> = {
 };
 
 const heroMobile: Record<string, CSSProperties> = {
-  heroSection: { padding: '3rem 0' }, 
+  heroSection: { padding: '3rem 0' },
   heroContainer: {
     flexDirection: 'column',
     textAlign: 'center',
   },
   title: { fontSize: '2.5rem' },
   subtitle: { fontSize: '1.5rem' },
+  description: { color: 'rgba(255, 255, 255, 0.8)' },
   heroImage: { marginTop: '3rem', order: -1 },
   imagePlaceholder: { maxWidth: '300px', height: 'auto' }
 };
 
-// --- ESTILOS DAS "FEATURES" ---
+// --- ESTILOS DAS "FEATURES" (Cards com borda lateral azul) ---
 const featuresBase: Record<string, CSSProperties> = {
   sectionTitle: {
     fontSize: '2.2rem',
@@ -90,10 +91,14 @@ const featuresBase: Record<string, CSSProperties> = {
     alignItems: 'flex-start',
     gap: '1.5rem',
     padding: '2rem',
-    backgroundColor: '#f9f9f9',
+    backgroundColor: '#FFFFFF',
     borderRadius: '12px',
+    // Borda fina cinza
     border: '1px solid #E0E0E0',
+    // A TAG AZUL NA ESQUERDA
+    borderLeft: '12px solid rgba(26, 39, 91, 1)',
     boxShadow: '0 4px 12px rgba(0, 0, 0, 0.05)',
+    overflow: 'hidden',
   },
   iconWrapper: {
     fontSize: '3rem',
@@ -106,7 +111,8 @@ const featuresBase: Record<string, CSSProperties> = {
   cardTitle: {
     fontSize: '1.25rem',
     margin: '0 0 0.5rem 0',
-    color: '#222',
+    color: 'rgba(26, 39, 91, 1)',
+    fontWeight: 700,
   },
   cardDescription: {
     fontSize: '0.9rem',
@@ -139,7 +145,7 @@ const aboutBase: Record<string, CSSProperties> = {
   },
   aboutHeaderTitle: {
     fontSize: '2.5rem',
-    color: 'rgba(26, 39, 91, 1)', 
+    color: 'rgba(26, 39, 91, 1)',
     margin: '0 0 1rem 0',
   },
   aboutParagraph: {
@@ -153,10 +159,10 @@ const aboutBase: Record<string, CSSProperties> = {
     alignItems: 'flex-start',
   },
   aboutTextContent: {
-    flex: 2, 
+    flex: 2,
   },
   aboutImageWrapper: {
-    flex: 1, 
+    flex: 1,
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
@@ -166,7 +172,7 @@ const aboutBase: Record<string, CSSProperties> = {
     height: 'auto',
   },
   aboutList: {
-    listStyleType: 'none', 
+    listStyleType: 'none',
     padding: 0,
     margin: 0,
   },
@@ -177,7 +183,7 @@ const aboutBase: Record<string, CSSProperties> = {
   },
   aboutListItemTitle: {
     fontWeight: 700,
-    color: 'rgba(26, 39, 91, 1)', 
+    color: 'rgba(26, 39, 91, 1)',
     marginBottom: '0.5rem',
   },
   aboutListItemDescription: {
@@ -216,59 +222,61 @@ const aboutMobile: Record<string, CSSProperties> = {
   }
 };
 
-// --- ESTILOS DO CARROSSEL DE TAGS (MODIFICADO) ---
+// --- ESTILOS DO CARROSSEL DE TAGS (Ajustado para preencher) ---
 const carouselBase: Record<string, CSSProperties> = {
   carouselContainer: {
     position: 'relative',
     width: '100%',
-    padding: '0', // Removido padding dos botões
+    padding: '3rem 0',
     boxSizing: 'border-box',
-    cursor: 'pointer', // Indica que pode ser interagido
+    overflow: 'hidden',
+    cursor: 'grab',
+    backgroundColor: '#FFFFFF',
   },
   carouselViewport: {
     overflow: 'hidden',
+    width: '100%',
   },
   carouselTrack: {
     display: 'flex',
-    transform: 'translateX(0)',
-    transition: 'transform 0.5s ease-in-out',
-    gap: '1rem',
+    width: '100%',
+    // Transição controlada no index.tsx
   },
   carouselSlidePage: {
-    minWidth: '100%',
+    minWidth: '100%', // 100% da largura da tela
     flexShrink: 0,
     display: 'flex',
-    justifyContent: 'center',
-    gap: '1rem',
+    justifyContent: 'space-between', // Distribui itens igualmente
+    alignItems: 'center',
+    padding: '0 10px',
+    boxSizing: 'border-box',
+    gap: '15px',
   },
   carouselTag: {
-    flexShrink: 0,
-    padding: '8px 20px',
+    flex: 1, // Ocupa o espaço disponível
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: '10px 5px',
     border: `1px solid rgba(26, 39, 91, 1)`,
-    borderRadius: '30px',
+    borderRadius: '50px',
     color: `rgba(26, 39, 91, 1)`,
     fontSize: '1rem',
-    fontWeight: 500,
+    fontWeight: 600,
     userSelect: 'none',
     backgroundColor: '#fff',
-  },
-  // Estilos de botão removidos
+    whiteSpace: 'nowrap',
+    textAlign: 'center',
+  }
 };
 
 const carouselMobile: Record<string, CSSProperties> = {
   carouselContainer: {
-    padding: '0',
+    padding: '2rem 0',
   },
   carouselTag: {
-    fontSize: '0.9rem',
-    padding: '6px 16px',
-  },
-  carouselSlidePage: {
-    minWidth: '100%',
-    flexShrink: 0,
-    display: 'flex',
-    justifyContent: 'center',
-    gap: '0.5rem',
+    fontSize: '0.85rem',
+    padding: '8px 5px',
   },
 };
 
@@ -277,17 +285,17 @@ const licenseBase: Record<string, CSSProperties> = {
   licenseContainer: {
     display: 'flex',
     justifyContent: 'center',
-    alignItems: 'flex-start', 
+    alignItems: 'flex-start',
     gap: '3rem',
   },
   licenseTextContent: {
     flex: 1,
     color: '#333',
-    maxWidth: '500px', 
+    maxWidth: '500px',
   },
   licenseTitle: {
     fontSize: '2rem',
-    color: 'rgba(26, 39, 91, 1)', 
+    color: 'rgba(26, 39, 91, 1)',
     marginBottom: '1rem',
   },
   licenseParagraph: {
@@ -296,7 +304,7 @@ const licenseBase: Record<string, CSSProperties> = {
     marginBottom: '1rem',
   },
   licenseList: {
-    listStyleType: 'decimal', 
+    listStyleType: 'decimal',
     paddingLeft: '1.5rem',
     margin: 0,
   },
@@ -306,10 +314,10 @@ const licenseBase: Record<string, CSSProperties> = {
     lineHeight: 1.5,
   },
   licenseCard: {
-    flex: 0.7, 
-    minWidth: '300px', 
+    flex: 0.7,
+    minWidth: '300px',
     padding: '2.5rem',
-    backgroundColor: '#fff', 
+    backgroundColor: '#fff',
     borderRadius: '12px',
     border: '2px solid rgba(217, 217, 217, 1)',
     textAlign: 'center',
@@ -337,12 +345,17 @@ const licenseBase: Record<string, CSSProperties> = {
   licenseFeatureItem: {
     marginBottom: '0.8rem',
     fontSize: '1rem',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: '8px'
   },
   licenseCardButton: {
-    padding: '12px 28px',
+    width: '100%',
+    padding: '12px 0',
     fontSize: '1.1rem',
     fontWeight: 600,
-    color: '#fff', 
+    color: '#fff',
     background: 'linear-gradient(to right, rgba(26, 39, 91, 1), rgba(46, 71, 189, 1)',
     border: 'none',
     borderRadius: '8px',
@@ -359,21 +372,20 @@ const licenseMobile: Record<string, CSSProperties> = {
   },
   licenseTextContent: {
     textAlign: 'center',
-    maxWidth: 'unset', 
+    maxWidth: 'unset',
   },
   licenseList: {
-    textAlign: 'left', 
+    textAlign: 'left',
     margin: '0 auto',
-    maxWidth: '300px', 
+    maxWidth: '300px',
   },
   licenseCard: {
-    minWidth: 'unset', 
+    minWidth: 'unset',
     width: '90%',
-    maxWidth: '400px', 
+    maxWidth: '400px',
     padding: '2rem 1.5rem',
   },
   licensePrice: { fontSize: '3rem' },
-  licenseCardButton: { width: '100%' },
 };
 
 // --- ESTILOS DO CONTATO ---
@@ -395,23 +407,22 @@ const contactBase: Record<string, CSSProperties> = {
     display: 'flex',
     justifyContent: 'center',
     gap: '3rem',
-    flexWrap: 'wrap', 
+    flexWrap: 'wrap',
   },
   contactIconWrapper: {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    width: '120px', 
+    width: '120px',
     height: '120px',
     borderRadius: '50%',
-    backgroundColor: '#F4F6FF', 
-    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.08)',
+
     cursor: 'pointer',
     transition: 'transform 0.2s ease, box-shadow 0.2s ease',
-    flexShrink: 0, 
+    flexShrink: 0,
   },
-  contactIconWrapperHover: { 
+  contactIconWrapperHover: {
     transform: 'translateY(-5px)',
     boxShadow: '0 8px 20px rgba(0, 0, 0, 0.15)',
   },
@@ -439,16 +450,13 @@ const contactMobile: Record<string, CSSProperties> = {
   contactIcon: { fontSize: '2.5rem' },
 };
 
-// --- FUNÇÃO FINAL ---
+// --- FUNÇÃO FINAL DE MERGE ---
 export const getStyles = (isMobile: boolean): Record<string, CSSProperties> => {
-  // Combina todos os estilos base
   const base = { ...heroBase, ...featuresBase, ...aboutBase, ...carouselBase, ...licenseBase, ...contactBase };
   if (!isMobile) return base;
 
-  // Combina todos os estilos mobile
   const mobile = { ...heroMobile, ...featuresMobile, ...aboutMobile, ...carouselMobile, ...licenseMobile, ...contactMobile };
 
-  // Faz o merge
   return Object.keys(base).reduce((acc, key) => {
     return {
       ...acc,

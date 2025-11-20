@@ -1,15 +1,13 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import HomePage from '../pages';
+import HomePage from '../pages'
+import LoginPage from '../pages/login';
 
 const AppRoutes: React.FC = () => {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
-      {/* Quando você tiver outras páginas:
-        <Route path="/contato" element={<PaginaContato />} />
-        <Route path="/login" element={<PaginaLogin />} />
-      */}
+      <Route path="/login" element={<LoginPage />} />
     </Routes>
   );
 };
