@@ -1,7 +1,7 @@
 
 import Navbar from './components/Navbar';
 
-import AppRoutes from './routes';
+import AppRoutes from './app-routes';
 import { useMediaQuery } from './hooks/useMediaQuery'; // Vamos precisar do hook aqui
 
 function App() {
