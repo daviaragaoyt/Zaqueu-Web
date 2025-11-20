@@ -24,7 +24,7 @@ const LoginPage: React.FC = () => {
         <div style={styles.container}>
             <div style={styles.leftPanel}>
                 <img
-                    src="public\login-background.png"
+                    src="\login-background.png"
                     alt="Fundo Decorativo"
                     style={styles.leftImage}
                 />
@@ -33,7 +33,7 @@ const LoginPage: React.FC = () => {
                 <div style={styles.logoWrapper}>
                     <div style={styles.logoIconBox}>
                         <img
-                            src="public/logo.png"
+                            src="/logo.png"
                             style={styles.leftImage}
                         />
                     </div>
